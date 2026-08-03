@@ -1,0 +1,99 @@
+/* ==========================================================================
+   VartexSoft — Design Tokens & Base
+   ========================================================================== */
+
+:root {
+  /* Brand colors — dark + gold, taken from VartexSoft's existing identity */
+  --color-bg-dark: #12141c;
+  --color-bg-darker: #0a0b11;
+  --color-surface: #191b25;
+  --color-surface-2: #20222e;
+
+  --color-gold: #f0a93a;
+  --color-gold-light: #f7c471;
+  --color-gold-dim: rgba(240, 169, 58, 0.14);
+
+  --color-white: #ffffff;
+  --color-gray-text: #a4a7b5;
+  --color-gray-500: #6b6e7d;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* Light-theme tokens — used by every white-background section in home.css */
+  --color-ink: #12141c;
+  --color-ink-muted: #565a68;
+  --color-surface-light: #f6f7fa;
+  --color-surface-light-2: #eef0f4;
+  --color-border-light: rgba(18, 20, 28, 0.08);
+
+  /* Type */
+  --font-display: "Clash Display", "Space Grotesk", sans-serif;
+  --font-body: "Satoshi", "Inter", sans-serif;
+
+  /* Layout */
+  --container-width: 1280px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: white;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.vx-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+@media (max-width: 900px) {
+  .vx-container {
+    padding: 0 24px;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}

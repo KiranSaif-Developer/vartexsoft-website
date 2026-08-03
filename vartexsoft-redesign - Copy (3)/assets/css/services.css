@@ -1,0 +1,879 @@
+/* ==========================================================================
+   VartexSoft — Service Detail Page (pages/services/*.html)
+   ========================================================================== */
+
+.vx-service-detail {
+  padding: 150px 0 100px;
+}
+
+.vx-service-detail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-ink-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  transition: color 0.2s ease;
+}
+
+.vx-service-detail__back:hover {
+  color: var(--color-gold);
+}
+
+.vx-service-detail__grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ---------- Header ---------- */
+.vx-service-detail__header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+/* our latest services */
+.vx-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.vx-section-header__title {
+  font-size: 34px;
+  font-weight: 950;
+  color: #f0a93a;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.vx-service-detail__icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  background: var(--color-gold-dim);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vx-service-detail__header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-top: 4px;
+}
+
+/* ---------- Cover image ---------- */
+.vx-service-detail__cover {
+  position: relative;
+  height: 320px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  background: var(--color-surface-light);
+  margin-bottom: 36px;
+}
+
+.vx-service-detail__cover img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+}
+
+.vx-service-detail__cover--fallback img {
+  display: none;
+}
+
+.vx-service-detail__cover--fallback::after {
+  content: "Add a project screenshot here";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ink-muted);
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(160deg, var(--color-surface-light), var(--color-surface-light-2));
+}
+
+/* ---------- Prose ---------- */
+.vx-service-detail__prose p {
+  color: var(--color-ink-muted);
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.vx-service-detail__block {
+  margin-top: 44px;
+}
+
+.vx-service-detail__block h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 620;
+  color: var(--color-ink);
+  margin-bottom: 18px;
+}
+
+/* ---------- Why-us checklist ---------- */
+.vx-service-detail__checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.vx-service-detail__checklist li {
+  position: relative;
+  padding-left: 28px;
+  color: var(--color-ink-muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.vx-service-detail__checklist li strong {
+  color: var(--color-ink);
+}
+
+.vx-service-detail__checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-gold-dim);
+  box-shadow: inset 0 0 0 1px rgba(240, 169, 58, 0.4);
+}
+
+.vx-service-detail__checklist li::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  width: 6px;
+  height: 3px;
+  border-left: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-gold);
+  transform: rotate(-45deg);
+}
+
+/* ---------- Numbered steps ---------- */
+.vx-service-detail__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.vx-service-detail__step {
+  display: flex;
+  gap: 18px;
+}
+
+.vx-service-detail__step span {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(240, 169, 58, 0.4);
+  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vx-service-detail__step h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+.vx-service-detail__step p {
+  color: var(--color-ink-muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ---------- FAQ accordion (native <details>, no JS needed) ---------- */
+.vx-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vx-faq__item {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: 4px 20px;
+  background: var(--color-surface-light);
+}
+
+.vx-faq__item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 26px 16px 0;
+  position: relative;
+  font-weight: 700;
+  font-size: 16.5px;
+  color: var(--color-ink);
+}
+
+.vx-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.vx-faq__item summary::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-gold);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.25s ease;
+}
+
+.vx-faq__item[open] summary::after {
+  transform: translateY(-30%) rotate(225deg);
+}
+
+.vx-faq__item p {
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  line-height: 1.65;
+  padding-bottom: 18px;
+}
+
+/* ---------- Sidebar CTA (sticky) ---------- */
+.vx-service-detail__sidebar {
+  position: sticky;
+  top: 110px;
+}
+
+.vx-service-detail__cta {
+  background: var(--color-bg-dark);
+  border-radius: var(--radius-md);
+  padding: 32px 26px;
+  text-align: center;
+}
+
+.vx-service-detail__cta h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+
+.vx-service-detail__cta p {
+  color: var(--color-gray-text);
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.vx-service-detail__cta .vx-btn--primary {
+  width: 100%;
+  justify-content: center;
+}
+
+.vx-service-detail__cta-link {
+  display: block;
+  margin-top: 14px;
+  color: var(--color-gray-text);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.vx-service-detail__cta-link:hover {
+  color: var(--color-gold);
+}
+
+/* ---------- Related services (duplicated from home.css intentionally —
+   this page doesn't load home.css, so these two classes are kept here
+   in sync so the card look matches the homepage). ---------- */
+.vx-service-detail__related {
+  margin-top: 25px;
+  padding-top: 6px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.vx-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.vx-service-card {
+  display: block;
+  text-decoration: none;
+  padding: 28px 24px;
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.vx-service-card:hover {
+  border-color: rgba(240, 169, 58, 0.35);
+  background: var(--color-surface-light-2);
+  transform: translateY(-4px);
+}
+
+.vx-service-card__icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--color-gold-dim);
+  color: var(--color-gold);
+  margin-bottom: 20px;
+}
+
+.vx-service-card h3 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.vx-service-card p {
+  color: var(--color-ink-muted);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .vx-service-detail__grid {
+    grid-template-columns: 1fr;
+  }
+  .vx-service-detail__sidebar {
+    position: static;
+  }
+  .vx-services__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .vx-service-detail {
+    padding: 130px 0 70px;
+  }
+  .vx-service-detail__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .vx-services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Services Overview Page (pages/services.html)
+   ========================================================================== */
+
+/* ---------- Dark hero band ---------- */
+.vx-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border: 1px solid rgba(240, 169, 58, 0.3);
+  border-radius: 999px;
+  background: rgba(240, 169, 58, 0.06);
+  color: var(--color-gold-light);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.vx-services-intro__text .vx-eyebrow {
+  color: var(--color-gold);
+  background: var(--color-gold-dim);
+}
+
+.vx-services-hero {
+  position: relative;
+  padding: 160px 0 70px;
+  background: var(--color-bg-dark);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vx-services-hero__grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(240, 169, 58, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240, 169, 58, 0.07) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(ellipse 70% 100% at 50% 0%, black 40%, transparent 100%);
+}
+
+.vx-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-ink-muted);
+  margin-bottom: 20px;
+}
+
+.vx-breadcrumb a {
+  color: var(--color-ink-muted);
+  text-decoration: none;
+}
+
+.vx-breadcrumb a:hover {
+  color: var(--color-gold);
+}
+
+.vx-breadcrumb span:last-child {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.vx-breadcrumb--dark {
+  color: var(--color-gray-text);
+}
+
+.vx-breadcrumb--dark a {
+  color: var(--color-gray-text);
+}
+
+.vx-breadcrumb--dark span:last-child {
+  color: var(--color-white);
+}
+
+.vx-services-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.4vw, 50px);
+  font-weight: 650;
+  line-height: 1.15;
+  color: var(--color-white);
+  margin-top: 14px;
+  max-width: 720px;
+}
+
+.vx-services-hero__title span {
+  color: var(--color-gold);
+}
+
+/* ---------- Light intro band ---------- */
+.vx-services-intro {
+  padding: 80px 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.vx-services-intro__grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.vx-services-intro__text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-ink);
+  margin: 14px 0 16px;
+}
+
+.vx-services-intro__text h2 span {
+  color: var(--color-gold);
+}
+
+.vx-services-intro__text p {
+  color: black;
+  font-size: 20px;
+  line-height: 1.75;
+  max-width: 460px;
+  margin-bottom: 28px;
+}
+
+/* ---------- Animated mockup illustration ---------- */
+.vx-services-intro__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ---------- Intro Section Image Fix ---------- */
+.vx-services-intro__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.vx-intro-img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  /* Soft shadow for depth */
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.08));
+}
+@keyframes vxMockupFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.vx-services-overview {
+  padding: 20px 0 100px;
+}
+
+.vx-services-overview__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.vx-overview-card {
+  display: block;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.vx-overview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(18, 20, 28, 0.1);
+}
+
+.vx-overview-card__media {
+  position: relative;
+  height: 190px;
+  background: var(--color-surface-light);
+}
+
+.vx-overview-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vx-overview-card__media--fallback img {
+  display: none;
+}
+
+
+.vx-overview-card__media--fallback::after {
+  content: "Add a photo here";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ink-muted);
+  font-size: 12.5px;
+  font-weight: 700;
+  background: linear-gradient(160deg, var(--color-surface-light), var(--color-surface-light-2));
+}
+
+/* .vx-overview-card__icon {
+  position: relative;
+  left: 20px;
+  bottom: -55px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-bg-darker);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(240, 169, 58, 0.4);
+  margin-top: -46px; /* Smooth overlapping with top image border */
+  /* margin-bottom: 16px; /* Heading ko clear space dene ke liye */
+  /* border: 3px solid #ffffff; */
+/* } */ 
+
+.vx-overview-card__body {
+  padding: 36px 22px 24px;
+}
+
+.vx-overview-card__body h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.vx-overview-card__body p {
+  color: var(--color-ink-muted);
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.vx-overview-card__link {
+  display: inline-block;
+  color: var(--color-gold);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .vx-services-overview__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .vx-services-intro__grid {
+    grid-template-columns: 1fr;
+  }
+  .vx-services-intro__visual {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .vx-services-hero {
+    padding: 130px 0 50px;
+  }
+  .vx-services-intro {
+    padding: 56px 0;
+  }
+  .vx-services-overview__grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ---------- CSS-only lanyard card (services hero, right side) ---------- */
+.vx-hero-lanyard {
+  position: absolute;
+  top: 0;
+  right: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+  animation: vxLanyardSwing 4.5s ease-in-out infinite;
+}
+
+.vx-hero-lanyard__strap {
+  width: 26px;
+  height: 130px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--color-bg-darker) 0 22px,
+    #1c1e29 22px 24px
+  );
+  border-radius: 4px 4px 0 0;
+  position: relative;
+}
+
+.vx-hero-lanyard__strap::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  transform: translateX(-50%);
+  box-shadow: 0 30px 0 0 var(--color-gold), 0 60px 0 0 var(--color-gold);
+  opacity: 0.85;
+}
+
+.vx-hero-lanyard__clip {
+  width: 34px;
+  height: 16px;
+  background: linear-gradient(180deg, #cfd3dc, #9a9fac);
+  border-radius: 5px;
+  margin-top: -2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.vx-hero-lanyard__card {
+  width: 140px;
+  margin-top: -4px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 26px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 24px 40px -8px rgba(0, 0, 0, 0.35);
+}
+
+.vx-hero-lanyard__card svg {
+  color: var(--color-gold);
+  margin-bottom: 10px;
+}
+
+.vx-hero-lanyard__card span {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-ink, #12141c);
+  letter-spacing: 0.02em;
+}
+
+@keyframes vxLanyardSwing {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+
+@media (max-width: 1024px) {
+  .vx-hero-lanyard {
+    display: none;
+  }
+}
+
+/* Why choose us in (services) */
+/* ---------- WHY OUR SERVICES ---------- */
+.vx-why-better {
+  padding: 100px 0;
+  background: var(--color-surface-light);
+}
+
+.vx-why-better__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.vx-why-better__media {
+  position: relative;
+  height: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 30px 60px -12px rgba(18, 20, 28, 0.15);
+}
+
+.vx-why-better__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vx-why-better__media--fallback img {
+  display: none;
+}
+
+.vx-why-better__media--fallback::after {
+  content: "Add a team or workspace photo here";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  color: var(--color-ink-muted);
+  font-size: 14px;
+  font-weight: 700;
+  background: linear-gradient(160deg, #ffffff, var(--color-surface-light-2));
+}
+
+.vx-why-better__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.vx-why-better__content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-ink);
+  margin-bottom: 34px;
+  max-width: 460px;
+}
+
+.vx-why-better__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.vx-why-better__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-ink);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.vx-why-better__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(18, 20, 28, 0.08);
+  border-color: rgba(240, 169, 58, 0.35);
+}
+
+.vx-why-better__icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--color-gold-dim);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .vx-why-better__grid {
+    grid-template-columns: 1fr;
+  }
+  .vx-why-better__media {
+    height: 320px;
+  }
+}
+
+@media (max-width: 560px) {
+  .vx-why-better__list {
+    grid-template-columns: 1fr;
+  }
+}
