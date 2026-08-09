@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Zero to Deployed: How We Structure Our Web Dev Course Projects — VartexSoft</title>
+  <meta name="description"
+    content="Every project in our Web Development track is built to mirror a real client brief. Here's the exact structure we use." />
+
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500,700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/components.css" />
+  <link rel="stylesheet" href="../../assets/css/blog.css" />
+  <link rel="stylesheet" href="../../assets/css/post.css" />
+</head>
+
+<body data-page="Blog" data-root="sub">
+
+  <div id="vx-navbar"></div>
+
+  <main>
+    <!-- ================= POST HEADER ================= -->
+    <section class="vx-post-header">
+      <div class="vx-container">
+
+        <nav class="vx-breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span>/</span>
+          <a href="../blog.html">Blog</a>
+          <span>/</span>
+          <span>Web Development</span>
+        </nav>
+
+        <span class="vx-post-header__tag">Web Development</span>
+        <h1>From Zero to Deployed: How We Structure Our Web Dev Course Projects</h1>
+
+        <div class="vx-post-header__meta">
+          <div class="vx-post-header__author">
+            <div class="vx-post-header__avatar">
+              <img src="../../assets/images/blogsite.jpg" alt="Adeeb Sarwar"
+                onerror="this.closest('.vx-post-header__avatar').classList.add('vx-post-header__avatar--fallback')">
+            </div>
+            <div>
+              <span class="vx-post-header__author-name">Ayaan Raza</span>
+              <span class="vx-post-header__author-role">Founder &amp; Lead Instructor</span>
+            </div>
+          </div>
+
+          <div class="vx-post-header__stats">
+            <span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+              </svg>
+              Aug 4, 2026
+            </span>
+            <span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 3" />
+              </svg>
+              7 min read
+            </span>
+          </div>
+        </div>
+
+        <div class="vx-post-cover">
+          <img src="../../assets/images/blog_featured.jpg" alt="Structuring web development course projects"
+            onerror="this.closest('.vx-post-cover').classList.add('vx-post-cover--fallback')">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= ARTICLE + SIDEBAR ================= -->
+    <div class="vx-container">
+      <div class="vx-post-layout">
+
+        <article class="vx-post-prose">
+
+          <p>Every cohort, we get some version of the same question in week one: "when do we start building something
+            real?" It's a fair question — most people who sign up for a coding course have already sat through a free
+            YouTube series or two, and what's usually missing isn't information. It's structure.</p>
+
+          <p>So before we talk about frameworks or syntax, here's the actual structure every project in our Web
+            Development track is built around — the same one we use internally when we scope client work.</p>
+
+          <h2>Start With a Brief, Not a Tutorial</h2>
+
+          <p>Tutorials tell you exactly what to build, in exact order, with the exact code to type. Client work never
+            works that way. You get a brief: a page count, a rough audience, a handful of "must-haves," and a deadline.
+            Everything else is your call.</p>
+
+          <p>That's why every project we assign starts as a one-page brief, not a spec sheet. Students have to make the
+            same calls a freelancer makes on day one — what pages actually matter, what "responsive" means for this
+            specific audience, and where to spend their limited time.</p>
+
+          <div class="vx-post-quote">
+            <p>"The gap between a tutorial project and a portfolio project isn't difficulty. It's ambiguity."</p>
+            <cite>— Ayaan Raza, Founder &amp; Lead Instructor</cite>
+          </div>
+
+          <h2>The Four-Stage Structure</h2>
+
+          <p>Every project — whether it's a landing page in week two or the final capstone — moves through the same four
+            stages. It's deliberately close to how we run actual client engagements.</p>
+
+          <h3>1. Scope &amp; Wireframe</h3>
+          <p>Before any code gets written, students sketch the page structure and list out the sections they'll need.
+            This step alone eliminates most of the "I don't know where to start" paralysis we used to see constantly.
+          </p>
+
+          <h3>2. Build in Layers</h3>
+          <p>Structure first (semantic HTML), then layout (CSS Grid/Flexbox), then interactivity (JavaScript or React).
+            Building in layers means a student always has something visible on screen, even if it's unstyled — which
+            keeps momentum up.</p>
+
+          <h3>3. Mentor Review</h3>
+          <p>Every project gets a real code review from a mentor, not just a pass/fail grade. This is usually where the
+            most learning happens — seeing how a small refactor makes a component reusable, or why a particular naming
+            convention matters six files later.</p>
+
+          <h3>4. Ship It</h3>
+          <p>The project isn't done until it's deployed and live at a real URL. A finished project sitting in a local
+            folder doesn't go on a portfolio, and it doesn't teach you anything about the parts of web development that
+            happen after "it works on my machine."</p>
+
+          <div class="vx-post-image">
+            <img src="../../assets/images/blog_post_inline.jpg" alt="Student reviewing a deployed project"
+              onerror="this.closest('.vx-post-image').classList.add('vx-post-image--fallback')">
+          </div>
+
+          <h2>What This Actually Fixes</h2>
+
+          <p>A few things change once projects are structured this way instead of as guided tutorials:</p>
+
+          <ul class="vx-post-checklist">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              Students make real decisions instead of following steps, which is the actual skill that gets tested in
+              interviews.
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              Portfolios end up with genuinely different projects instead of eleven identical to-do apps.
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              Mentor feedback has something specific to respond to, instead of just checking boxes against a spec.
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              Students leave comfortable with ambiguity, which is most of what junior developer work actually is.
+            </li>
+          </ul>
+
+          <h2>Where It Goes From Here</h2>
+
+          <p>This structure isn't fixed forever — it gets reshaped every few months based on what's actually coming up
+            on client projects. If we notice ourselves leaning on a particular pattern or tool at work, it usually shows
+            up in the course within a term or two. That feedback loop is the whole point of being taught by people still
+            doing the work, not just teaching it.</p>
+
+        </article>
+
+        <!-- (sidebar continues below, shared with blog listing page) -->
+      </div>
+    </div>
+
+    <div class="vx-container">
+      <div class="vx-post-layout" style="padding-top: 0;">
+        <div>
+
+          <div class="vx-post-footer-row">
+            <div class="vx-post-tags">
+              <a href="../blog.html">Web Dev</a>
+              <a href="../blog.html">Portfolio</a>
+              <a href="../blog.html">Freelancing</a>
+              <a href="../blog.html">Course Design</a>
+            </div>
+            <div class="vx-post-share">
+              <span>Share:</span>
+              <a href="#" aria-label="Share on Twitter"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 4s-.7 2-2 3.4c1.6 9.4-8.6 16.6-17 11.6 2.4.1 4.8-.7 6.6-2.1-2.5-.4-4.5-2.2-5.2-4.5 1 .2 1.9.1 2.8-.2C4.9 11.7 3 9.4 3 6.7c1 .5 2 .8 3.2.9C4.3 6.2 3.6 3.3 5 1c2.7 3.3 6.7 5.4 11.1 5.6-1.1-4.3 4.4-6.6 7-3.4 1.3-.2 2.5-.7 3.6-1.4-.4 1.3-1.3 2.4-2.4 3.1 1.1-.1 2.2-.4 3.2-.9-.7 1.1-1.6 2.1-2.6 2.9Z" />
+                </svg></a>
+              <a href="#" aria-label="Share on LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                </svg></a>
+              <a href="#" aria-label="Copy link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.5 1.5M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.5-1.5" />
+                </svg></a>
+            </div>
+          </div>
+
+          <div class="vx-post-author-bar">
+            <div class="vx-post-author-bar__avatar">
+              <img src="../../assets/images/team_1.jpg" alt="Ayaan Raza"
+                onerror="this.closest('.vx-post-author-bar__avatar').classList.add('vx-post-author-bar__avatar--fallback')">
+            </div>
+            <div>
+              <span class="vx-post-author-bar__label">Written By</span>
+              <h4>Ayaan Raza</h4>
+              <p>Founder &amp; Lead Instructor, Web Development at VartexSoft. Still ships client projects between
+                cohorts — writes mostly about the gap between tutorials and the job.</p>
+            </div>
+          </div>
+
+          <!-- ================= RELATED POSTS ================= -->
+          <div class="vx-post-related">
+            <h3>Related Articles</h3>
+            <div class="vx-post-related__grid">
+
+              <a href="blog-single.html" class="vx-blog-card">
+                <div class="vx-blog-card__media">
+                  <span class="vx-blog-card__tag">Career Advice</span>
+                  <img src="../../assets/images/blog_1.jpg" alt="Freelance portfolio projects"
+                    onerror="this.closest('.vx-blog-card__media').classList.add('vx-blog-card__media--fallback')">
+                </div>
+                <div class="vx-blog-card__body">
+                  <h3>5 Portfolio Projects That Actually Get Freelancers Hired</h3>
+                  <div class="vx-blog-card__meta">
+                    <span>Hira Malik</span>
+                    <span>5 min read</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="blog-single.html" class="vx-blog-card">
+                <div class="vx-blog-card__media">
+                  <span class="vx-blog-card__tag">Career Advice</span>
+                  <img src="../../assets/images/blog_3.jpg" alt="Junior vs job-ready developer"
+                    onerror="this.closest('.vx-blog-card__media').classList.add('vx-blog-card__media--fallback')">
+                </div>
+                <div class="vx-blog-card__body">
+                  <h3>The Real Difference Between a Junior and a Job-Ready Developer</h3>
+                  <div class="vx-blog-card__meta">
+                    <span>Ayaan Raza</span>
+                    <span>4 min read</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="blog-single.html" class="vx-blog-card">
+                <div class="vx-blog-card__media">
+                  <span class="vx-blog-card__tag">WordPress</span>
+                  <img src="../../assets/images/blog_6.jpg" alt="WordPress freelance client mistakes"
+                    onerror="this.closest('.vx-blog-card__media').classList.add('vx-blog-card__media--fallback')">
+                </div>
+                <div class="vx-blog-card__body">
+                  <h3>5 WordPress Client Mistakes Every Freelancer Makes Once</h3>
+                  <div class="vx-blog-card__meta">
+                    <span>Usman Farooq</span>
+                    <span>4 min read</span>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- ================= COMMENTS ================= -->
+          <div class="vx-post-comments">
+            <h3>Discussion (2)</h3>
+
+            <div class="vx-post-comment">
+              <div class="vx-post-comment__avatar">FZ</div>
+              <div class="vx-post-comment__body">
+                <div class="vx-post-comment__head">
+                  <strong>Fatima Zahra</strong>
+                  <span>2 days ago</span>
+                </div>
+                <p>The "ship it or it's not done" rule genuinely changed how I approached my capstone. Wish I'd read
+                  this before week one.</p>
+              </div>
+            </div>
+
+            <div class="vx-post-comment">
+              <div class="vx-post-comment__avatar">MK</div>
+              <div class="vx-post-comment__body">
+                <div class="vx-post-comment__head">
+                  <strong>Moiz Khan</strong>
+                  <span>4 days ago</span>
+                </div>
+                <p>Would love a follow-up on how mentor review sessions are actually structured — that part was the most
+                  useful for me.</p>
+              </div>
+            </div>
+
+            <div class="vx-post-comment-form">
+              <h4>Leave a Comment</h4>
+              <div class="vx-post-comment-form__row">
+                <input type="text" placeholder="Your name" />
+                <input type="email" placeholder="Your email" />
+              </div>
+              <textarea placeholder="Write your comment..."></textarea>
+              <button type="button" class="vx-btn vx-btn--primary">Post Comment</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="vx-blog-sidebar">
+
+          <div class="vx-blog-widget">
+            <h4>Search</h4>
+            <div class="vx-blog-search">
+              <input type="text" placeholder="Search articles..." />
+              <button type="button" aria-label="Search">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="vx-blog-widget vx-blog-author">
+            <div class="vx-blog-author__avatar">
+              <img src="../../assets/images/team_1.jpg" alt="Ayaan Raza"
+                onerror="this.closest('.vx-blog-author__avatar').classList.add('vx-blog-author__avatar--fallback')">
+            </div>
+            <h5>Ayaan Raza</h5>
+            <span>Founder &amp; Lead Instructor</span>
+            <p>Writes mostly about web development, freelancing, and what actually gets students hired.</p>
+          </div>
+
+          <div class="vx-blog-widget">
+            <h4>Recent Posts</h4>
+
+            <div class="vx-blog-recent">
+              <div class="vx-blog-recent__thumb">
+                <img src="../../assets/images/blog_2.jpg" alt=""
+                  onerror="this.closest('.vx-blog-recent__thumb').classList.add('vx-blog-recent__thumb--fallback')">
+              </div>
+              <div class="vx-blog-recent__body">
+                <h5>Why Your SEO Strategy Needs to Change</h5>
+                <span>6 min read</span>
+              </div>
+            </div>
+
+            <div class="vx-blog-recent">
+              <div class="vx-blog-recent__thumb">
+                <img src="../../assets/images/blog_4.jpg" alt=""
+                  onerror="this.closest('.vx-blog-recent__thumb').classList.add('vx-blog-recent__thumb--fallback')">
+              </div>
+              <div class="vx-blog-recent__body">
+                <h5>Faceless YouTube Channels: What Works Now</h5>
+                <span>6 min read</span>
+              </div>
+            </div>
+
+            <div class="vx-blog-recent">
+              <div class="vx-blog-recent__thumb">
+                <img src="../../assets/images/blog_5.jpg" alt=""
+                  onerror="this.closest('.vx-blog-recent__thumb').classList.add('vx-blog-recent__thumb--fallback')">
+              </div>
+              <div class="vx-blog-recent__body">
+                <h5>Flutter vs React Native: Which First?</h5>
+                <span>5 min read</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vx-blog-widget">
+            <h4>Popular Tags</h4>
+            <div class="vx-blog-tags">
+              <a href="../blog.html">Web Dev</a>
+              <a href="../blog.html">SEO</a>
+              <a href="../blog.html">Freelancing</a>
+              <a href="../blog.html">Career</a>
+              <a href="../blog.html">Design</a>
+              <a href="../blog.html">Flutter</a>
+            </div>
+          </div>
+
+          <div class="vx-blog-widget vx-blog-widget--dark">
+            <h4>Stay Updated</h4>
+            <p>New guides and course-building lessons, straight to your inbox. No spam, just useful stuff.</p>
+            <input type="email" placeholder="Your email address" />
+            <button type="button" class="vx-btn vx-btn--primary">Subscribe</button>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="vx-footer"></div>
+
+  <script src="../../assets/js/components.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
