@@ -47,7 +47,7 @@ html {
 }
 
 body {
-  background: white;
+  background: var(--color-bg-dark);   /* pehle jaisa wapis karo */
   color: var(--color-white);
   font-family: var(--font-body);
   font-size: 16px;
