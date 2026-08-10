@@ -323,10 +323,10 @@
 
 /* Why choose us in (services) */
 /* ---------- WHY OUR SERVICES ---------- */
-.vx-why-better {
+/* .vx-why-better {
   padding: 100px 0;
-  background: var(--color-surface-light);
-}
+  background: var(--color-surface-light); */
+/* }
 
 .vx-why-better__grid {
   display: grid;
@@ -442,4 +442,4 @@
   .vx-why-better__list {
     grid-template-columns: 1fr;
   }
-}
+} */
