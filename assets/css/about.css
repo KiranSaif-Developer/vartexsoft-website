@@ -4,12 +4,41 @@
    ========================================================================== */
 
 /* ---------- Hero (signature stat-band hero, distinct from services hero) ---------- */
+/* ---------- Hero ---------- */
 .vx-about-hero {
   position: relative;
-  padding: 160px 0 0;
+  padding: 160px 0 90px;
   background: var(--color-bg-dark);
   overflow: hidden;
   isolation: isolate;
+}
+
+.vx-about-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.vx-about-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.vx-about-hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    var(--color-bg-dark) 5%,
+    rgba(10, 11, 17, 0.85) 40%,
+    rgba(10, 11, 17, 0.4) 75%
+  );
+}
+
+.vx-about-hero__bg--fallback img {
+  display: none;
 }
 
 .vx-about-hero__grid-bg {
@@ -36,13 +65,12 @@
 
 .vx-about-hero__content {
   max-width: 700px;
-  padding-bottom: 64px;
 }
 
 .vx-about-hero__title {
   font-family: var(--font-display);
   font-size: clamp(32px, 4.6vw, 54px);
-  font-weight: 650;
+  font-weight: 700;
   line-height: 1.15;
   color: var(--color-white);
   margin: 16px 0 18px;
@@ -53,54 +81,11 @@
 }
 
 .vx-about-hero__subtitle {
-  color: var(--color-gray-text);
+  color: white;
   font-size: 18px;
   line-height: 1.75;
   max-width: 560px;
 }
-
-/* Stat band — glass cards straddling the hero/light-section seam */
-.vx-about-stats {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--color-border-light);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transform: translateY(50%);
-  box-shadow: 0 30px 60px -12px rgba(18, 20, 28, 0.18);
-}
-
-.vx-about-stat {
-  background: #ffffff;
-  padding: 30px 22px;
-  text-align: center;
-}
-
-.vx-about-stat__num {
-  font-family: var(--font-display);
-  font-size: clamp(26px, 2.6vw, 34px);
-  font-weight: 700;
-  color: var(--color-gold);
-  display: block;
-  margin-bottom: 6px;
-}
-
-.vx-about-stat__label {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-ink-muted);
-  letter-spacing: 0.02em;
-}
-
-@media (max-width: 768px) {
-  .vx-about-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 /* ---------- Our Story (chaptered timeline-style narrative) ---------- */
 .vx-about-story {
   padding: 150px 0 90px;
@@ -196,7 +181,7 @@
 }
 
 .vx-about-story__chapter p {
-  color: var(--color-ink-muted);
+  color: #000000;
   font-size: 16.5px;
   line-height: 1.75;
 }
@@ -211,6 +196,18 @@
     height: 300px;
   }
 }
+/* .vx-about-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.vx-about-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.28;
+} */
 
 /* ---------- Mission & Vision ---------- */
 .vx-about-mv {
@@ -254,7 +251,7 @@
 }
 
 .vx-about-mv__card p {
-  color: var(--color-ink-muted);
+  color: black;
   font-size: 16.5px;
   line-height: 1.75;
 }
@@ -267,7 +264,7 @@
 
 /* ---------- Values ---------- */
 .vx-about-values {
-  padding: 100px 0;
+  padding: 10px 0;
   background: #ffffff;
 }
 
@@ -311,7 +308,7 @@
 }
 
 .vx-about-value-card p {
-  color: var(--color-ink-muted);
+  color: black;
   font-size: 15.5px;
   line-height: 1.65;
 }
@@ -329,140 +326,73 @@
 }
 
 /* ---------- Milestones (alternating vertical timeline) ---------- */
-.vx-about-milestones {
-  padding: 100px 0;
-  background: var(--color-bg-dark);
+/* =========================================================
+   ABOUT JOURNEY — INTERACTIVE ORBIT
+   ========================================================= */
+
+.vx-journey {
   position: relative;
-  isolation: isolate;
   overflow: hidden;
+  padding: 125px 28px 105px;
+  background: #0b0e16;
+  color: #fff;
+  isolation: isolate;
 }
 
-.vx-about-milestones__grid-bg {
+
+/* subtle background */
+.vx-journey-bg {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image:
-    linear-gradient(rgba(240, 169, 58, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(240, 169, 58, 0.05) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: radial-gradient(ellipse 60% 100% at 50% 50%, black 30%, transparent 100%);
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(240,169,58,.075),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(240,169,58,.035),
+      transparent 20rem
+    );
 }
 
-.vx-about-milestones .vx-section-header__title,
-.vx-about-milestones .vx-eyebrow {
-  color: var(--color-white);
-}
 
-.vx-about-milestones .vx-eyebrow {
-  color: var(--color-gold-light);
-  border-color: rgba(240, 169, 58, 0.3);
-  background: rgba(240, 169, 58, 0.06);
-}
-
-.vx-about-timeline {
-  position: relative;
-  max-width: 880px;
-  margin: 60px auto 0;
-}
-
-.vx-about-timeline::before {
+/* tiny grid */
+.vx-journey-bg::before {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: rgba(240, 169, 58, 0.25);
-  transform: translateX(-50%);
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
 }
 
-.vx-about-timeline__item {
-  position: relative;
-  width: 50%;
-  padding: 0 40px 56px;
-}
-
-.vx-about-timeline__item:last-child {
-  padding-bottom: 0;
-}
-
-.vx-about-timeline__item:nth-child(odd) {
-  left: 0;
-  text-align: right;
-}
-
-.vx-about-timeline__item:nth-child(even) {
-  left: 50%;
-  text-align: left;
-}
-
-.vx-about-timeline__dot {
-  position: absolute;
-  top: 2px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--color-gold);
-  box-shadow: 0 0 0 5px rgba(240, 169, 58, 0.15);
-}
-
-.vx-about-timeline__item:nth-child(odd) .vx-about-timeline__dot {
-  right: -7px;
-}
-
-.vx-about-timeline__item:nth-child(even) .vx-about-timeline__dot {
-  left: -7px;
-}
-
-.vx-about-timeline__tag {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-gold);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.vx-about-timeline__item h3 {
-  font-family: var(--font-display);
-  font-size: 18.5px;
-  font-weight: 700;
-  color: var(--color-white);
-  margin-bottom: 8px;
-}
-
-.vx-about-timeline__item p {
-  color: var(--color-gray-text);
-  font-size: 15px;
-  line-height: 1.65;
-}
-
-@media (max-width: 768px) {
-  .vx-about-timeline::before {
-    left: 6px;
-  }
-
-  .vx-about-timeline__item,
-  .vx-about-timeline__item:nth-child(odd),
-  .vx-about-timeline__item:nth-child(even) {
-    width: 100%;
-    left: 0;
-    text-align: left;
-    padding: 0 0 40px 34px;
-  }
-
-  .vx-about-timeline__item:nth-child(odd) .vx-about-timeline__dot,
-  .vx-about-timeline__item:nth-child(even) .vx-about-timeline__dot {
-    left: 0;
-    right: auto;
-  }
-}
 
 /* * ---------- TEAM SECTION (6 CARDS IN 1 ROW) ---------- */ */
 .vx-team {
-  padding: 60px 0;
+  padding: 60px 0 120px ;
   background: #ffffff;
   position: relative;
   z-index: 1;
@@ -631,12 +561,12 @@
 }
 
   /* ---------- CTA band ---------- */
-  .vx-about-cta {
+  /* .vx-about-cta {
     padding: 90px 0;
     background: var(--color-bg-darker);
-  }
+  } */
 
-  .vx-about-cta__grid {
+  /* .vx-about-cta__grid {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -668,10 +598,476 @@
 
   .vx-about-cta__link:hover {
     color: var(--color-gold);
-  }
+  } */
 
   /* ---------- Section header on light bg reused from services.css pattern ---------- */
   .vx-about-values .vx-section-header,
   .vx-about-team .vx-section-header {
     margin-bottom: 50px;
   }
+  body[data-page="About"] section.vx-team {
+  background: #ffffff !important;
+}
+
+
+/*--------------------- who we start it-------------------- */
+/* =========================================================
+   VARTEXSOFT - JOURNEY SECTION
+   ========================================================= */
+
+.vx-journey-heading,
+.vx-journey-orbit,
+.vx-journey-bottom {
+  box-sizing: border-box;
+}
+
+.vx-journey-heading *,
+.vx-journey-orbit *,
+.vx-journey-bottom * {
+  box-sizing: border-box;
+}
+
+/* MAIN HEADING
+--------------------------------------------------------- */
+
+.vx-journey-heading {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 80px 0 40px;
+  color: #f5f5f5;
+  position: relative;
+  z-index: 2;
+}
+
+.vx-journey-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #e6a12b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vx-journey-eyebrow i {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #e6a12b;
+}
+
+.vx-journey-heading h2 {
+  margin: 14px 0 12px;
+
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.vx-journey-heading h2 span {
+  color: #e6a12b;
+}
+
+.vx-journey-heading p {
+  max-width: 650px;
+  margin: 0;
+
+  color: #9297a5;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   ORBIT AREA
+   ========================================================= */
+
+.vx-journey-orbit {
+  width: min(1100px, calc(100% - 40px));
+  height: 560px;
+  margin: 0 auto;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* CENTER CIRCLE
+--------------------------------------------------------- */
+
+.vx-journey-center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 190px;
+  height: 190px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      rgba(230, 161, 43, 0.22),
+      transparent 45%
+    ),
+    #171923;
+
+  border: 1px solid rgba(230, 161, 43, 0.55);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  box-shadow:
+    0 0 0 15px rgba(230, 161, 43, 0.025),
+    0 0 0 45px rgba(230, 161, 43, 0.018),
+    0 20px 70px rgba(0, 0, 0, 0.35);
+
+  z-index: 5;
+}
+
+.vx-center-small {
+  margin-bottom: 8px;
+
+  color: #e6a12b;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.vx-journey-center strong {
+  color: #ffffff;
+
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.vx-center-year {
+  margin-top: 12px;
+
+  color: #858a99;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   ORBIT RINGS
+   ========================================================= */
+
+.vx-orbit-ring {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.vx-orbit-ring-1 {
+  width: 330px;
+  height: 330px;
+
+  border: 1px solid rgba(230, 161, 43, 0.20);
+}
+
+.vx-orbit-ring-2 {
+  width: 470px;
+  height: 470px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   STAGES
+   ========================================================= */
+
+.vx-stage {
+  position: absolute;
+
+  width: 280px;
+
+  padding: 18px 20px;
+
+  background: rgba(20, 22, 31, 0.92);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+
+  z-index: 4;
+}
+
+.vx-stage:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(230, 161, 43, 0.55);
+
+  background: #1a1c26;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(230, 161, 43, 0.06);
+}
+
+
+/* NUMBER */
+
+.vx-stage-number {
+  position: absolute;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e6a12b;
+
+  color: #11131b;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* CONTENT */
+
+.vx-stage-content {
+  padding-left: 42px;
+}
+
+.vx-stage-tag {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #e6a12b;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.vx-stage h3 {
+  margin: 0 0 7px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.vx-stage p {
+  margin: 0;
+
+  color: #858a99;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   STAGE POSITIONS
+   ========================================================= */
+
+.vx-stage-1 {
+  top: 25px;
+  left: 0;
+}
+
+.vx-stage-2 {
+  top: 145px;
+  right: 0;
+}
+
+.vx-stage-3 {
+  bottom: 25px;
+  left: 0;
+}
+
+.vx-stage-4 {
+  bottom: 25px;
+  right: 0;
+}
+
+.vx-stage-5 {
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.vx-journey-bottom {
+  width: min(1100px, calc(100% - 40px));
+
+  margin: 0 auto;
+  padding: 20px 0 50px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  color: #777c8b;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.vx-journey-bottom div {
+  width: 80px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.vx-journey-bottom p {
+  margin: 0 0 0 8px;
+
+  color: #656a78;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .vx-journey-heading {
+    padding-top: 55px;
+  }
+
+  .vx-journey-heading h2 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .vx-journey-orbit {
+    height: auto;
+    padding: 30px 0;
+    overflow: visible;
+  }
+
+  .vx-orbit-ring {
+    display: none;
+  }
+
+  .vx-journey-center {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    transform: none;
+
+    margin: 0 auto 30px;
+
+    width: 150px;
+    height: 150px;
+  }
+
+  .vx-stage {
+    position: relative;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 100%;
+
+    margin-bottom: 14px;
+
+    transform: none !important;
+
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .vx-stage:hover {
+    transform: translateY(-3px) !important;
+  }
+
+  .vx-stage-5 {
+    display: block;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .vx-journey-heading {
+    width: calc(100% - 30px);
+    padding: 45px 0 25px;
+  }
+
+  .vx-journey-heading h2 {
+    font-size: 38px;
+    line-height: 1;
+  }
+
+  .vx-journey-heading p {
+    font-size: 14px;
+  }
+
+  .vx-journey-orbit {
+    width: calc(100% - 30px);
+  }
+
+  .vx-stage {
+    padding: 16px;
+  }
+
+  .vx-stage-content {
+    padding-left: 38px;
+  }
+
+  .vx-stage p {
+    font-size: 11px;
+  }
+
+  .vx-journey-bottom {
+    width: calc(100% - 30px);
+  }
+}

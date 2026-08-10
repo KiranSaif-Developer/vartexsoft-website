@@ -1,0 +1,892 @@
+/* =========================================================
+   VARTEXSOFT — PREMIUM SERVICE DETAIL PAGE
+   File: services_page.css
+   Scope: App Development / service-detail pages
+   ========================================================= */
+
+.vx-service-detail {
+  --sp-bg: #071018;
+  --sp-surface: #0d1822;
+  --sp-surface-2: #101f2b;
+  --sp-border: rgba(255,255,255,.09);
+  --sp-border-strong: rgba(255,255,255,.15);
+  --sp-text: #f5f7fa;
+  --sp-muted: #9aa9b7;
+  --sp-gold: #f0a93a;
+  --sp-gold-soft: #ffc96a;
+  --sp-gold-dim: rgba(240,169,58,.10);
+  --sp-shadow: 0 24px 70px rgba(0,0,0,.28);
+
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 42px 0 110px;
+  color: var(--sp-text);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(240,169,58,.08), transparent 27rem),
+    radial-gradient(circle at 88% 22%, rgba(75,128,170,.10), transparent 32rem),
+    linear-gradient(180deg, #071018 0%, #09141d 48%, #071018 100%);
+}
+
+.vx-service-detail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .28;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 72%);
+}
+
+.vx-service-detail .vx-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Back link */
+.vx-service-detail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 38px;
+  color: #aab6c1;
+  font: 500 13px/1 "Satoshi", sans-serif;
+  text-decoration: none;
+  transition: color .25s ease, transform .25s ease;
+}
+
+.vx-service-detail__back svg {
+  transition: transform .25s ease;
+}
+
+.vx-service-detail__back:hover {
+  color: var(--sp-gold-soft);
+  transform: translateX(-2px);
+}
+
+.vx-service-detail__back:hover svg {
+  transform: translateX(-3px);
+}
+
+/* Main two-column layout */
+.vx-service-detail__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 34px;
+  align-items: start;
+}
+
+.vx-service-detail__main {
+  min-width: 0;
+}
+
+/* Heading */
+.vx-service-detail__header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.vx-service-detail__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(240,169,58,.25);
+  border-radius: 18px;
+  color: var(--sp-gold-soft);
+  background:
+    linear-gradient(145deg, rgba(240,169,58,.14), rgba(240,169,58,.035));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 14px 35px rgba(0,0,0,.2);
+}
+
+.vx-service-detail__icon::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(240,169,58,.07);
+  border-radius: 23px;
+}
+
+.vx-service-detail .vx-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+  color: var(--sp-gold-soft);
+  font: 700 11px/1 "Satoshi", sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.vx-service-detail .vx-section-eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: currentColor;
+  opacity: .7;
+}
+
+.vx-service-detail__header h1 {
+  margin: 0;
+  color: #fff;
+  font: 700 clamp(38px, 5vw, 66px)/.98 "Clash Display", sans-serif;
+  letter-spacing: -.045em;
+}
+
+/* Hero image */
+.vx-service-detail__cover {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 410px;
+  border: 1px solid var(--sp-border-strong);
+  border-radius: 28px;
+  background: #0b151e;
+  box-shadow: var(--sp-shadow);
+}
+
+.vx-service-detail__cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 48%, rgba(4,10,15,.45) 100%),
+    linear-gradient(90deg, rgba(4,10,15,.12), transparent 42%);
+}
+
+.vx-service-detail__cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 410px;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.01);
+  transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+}
+
+.vx-service-detail__cover:hover img {
+  transform: scale(1.045);
+  filter: saturate(1.05);
+}
+
+.vx-service-detail__cover--fallback {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(240,169,58,.16), transparent 30%),
+    #0b151e;
+}
+
+/* Intro copy */
+.vx-service-detail__prose {
+  max-width: 820px;
+  padding: 38px 4px 12px;
+}
+
+.vx-service-detail__prose p {
+  margin: 0 0 18px;
+  color: #aeb9c4;
+  font: 400 17px/1.82 "Satoshi", sans-serif;
+}
+
+.vx-service-detail__prose p:first-child {
+  color: #dce3e8;
+  font-size: 19px;
+}
+
+/* Content cards */
+.vx-service-detail__block {
+  margin-top: 24px;
+  padding: 34px;
+  border: 1px solid var(--sp-border);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.018));
+  box-shadow: 0 18px 50px rgba(0,0,0,.13);
+  backdrop-filter: blur(12px);
+}
+
+.vx-service-detail__block h2 {
+  margin: 0 0 25px;
+  color: #fff;
+  font: 600 clamp(24px, 3vw, 32px)/1.1 "Clash Display", sans-serif;
+  letter-spacing: -.025em;
+}
+
+/* Checklist */
+.vx-service-detail__checklist {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vx-service-detail__checklist li {
+  position: relative;
+  padding: 17px 18px 17px 49px;
+  border: 1px solid rgba(255,255,255,.055);
+  border-radius: 14px;
+  color: #aeb9c4;
+  font: 400 14px/1.7 "Satoshi", sans-serif;
+  background: rgba(0,0,0,.12);
+}
+
+.vx-service-detail__checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 17px;
+  top: 16px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: #071018;
+  background: var(--sp-gold);
+  font: 800 12px/1 "Satoshi", sans-serif;
+}
+
+.vx-service-detail__checklist strong {
+  color: #f4f6f8;
+  font-weight: 700;
+}
+
+/* Process steps */
+.vx-service-detail__steps {
+  display: grid;
+  gap: 0;
+}
+
+.vx-service-detail__step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 18px;
+  padding: 21px 0;
+  border-bottom: 1px solid var(--sp-border);
+}
+
+.vx-service-detail__step:first-child {
+  padding-top: 0;
+}
+
+.vx-service-detail__step:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.vx-service-detail__step > span {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(240,169,58,.25);
+  border-radius: 13px;
+  color: var(--sp-gold-soft);
+  background: var(--sp-gold-dim);
+  font: 700 12px/1 "Satoshi", sans-serif;
+}
+
+.vx-service-detail__step h3 {
+  margin: 2px 0 7px;
+  color: #f5f7fa;
+  font: 600 18px/1.2 "Clash Display", sans-serif;
+}
+
+.vx-service-detail__step p {
+  margin: 0;
+  color: var(--sp-muted);
+  font: 400 14px/1.65 "Satoshi", sans-serif;
+}
+
+/* FAQ */
+.vx-faq {
+  display: grid;
+  gap: 10px;
+}
+
+.vx-faq__item {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.065);
+  border-radius: 14px;
+  background: rgba(0,0,0,.12);
+}
+
+.vx-faq__item summary {
+  position: relative;
+  padding: 19px 52px 19px 20px;
+  color: #edf1f4;
+  cursor: pointer;
+  list-style: none;
+  font: 600 15px/1.4 "Satoshi", sans-serif;
+  transition: color .2s ease, background .2s ease;
+}
+
+.vx-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.vx-faq__item summary::after {
+  content: "+";
+  position: absolute;
+  right: 19px;
+  top: 50%;
+  color: var(--sp-gold-soft);
+  font: 400 24px/1 "Satoshi", sans-serif;
+  transform: translateY(-50%);
+  transition: transform .25s ease;
+}
+
+.vx-faq__item[open] summary {
+  color: var(--sp-gold-soft);
+  background: rgba(240,169,58,.035);
+}
+
+.vx-faq__item[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.vx-faq__item p {
+  margin: 0;
+  padding: 0 20px 20px;
+  color: var(--sp-muted);
+  font: 400 14px/1.7 "Satoshi", sans-serif;
+}
+
+/* Sticky CTA */
+.vx-service-detail__sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.vx-service-detail__cta {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  border: 1px solid rgba(240,169,58,.24);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(240,169,58,.15), transparent 13rem),
+    linear-gradient(145deg, #111e28, #0b151e);
+  box-shadow: 0 24px 60px rgba(0,0,0,.25);
+}
+
+.vx-service-detail__cta::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 190px;
+  height: 190px;
+  border: 1px solid rgba(240,169,58,.10);
+  border-radius: 50%;
+  box-shadow: 0 0 0 28px rgba(240,169,58,.025), 0 0 0 56px rgba(240,169,58,.015);
+  pointer-events: none;
+}
+
+.vx-service-detail__cta h3 {
+  position: relative;
+  margin: 0 0 11px;
+  color: #fff;
+  font: 600 25px/1.15 "Clash Display", sans-serif;
+  letter-spacing: -.02em;
+}
+
+.vx-service-detail__cta p {
+  position: relative;
+  margin: 0 0 24px;
+  color: #9eacb8;
+  font: 400 14px/1.65 "Satoshi", sans-serif;
+}
+
+.vx-service-detail__cta .vx-btn--primary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  color: #111;
+  background: var(--sp-gold);
+  box-shadow: 0 12px 30px rgba(240,169,58,.16);
+  font: 700 13px/1 "Satoshi", sans-serif;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.vx-service-detail__cta .vx-btn--primary:hover {
+  background: var(--sp-gold-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(240,169,58,.23);
+}
+
+.vx-service-detail__cta-link {
+  display: block;
+  margin-top: 17px;
+  color: #9facb8;
+  text-align: center;
+  text-decoration: none;
+  font: 600 13px/1.4 "Satoshi", sans-serif;
+  transition: color .2s ease;
+}
+
+.vx-service-detail__cta-link:hover {
+  color: #fff;
+}
+
+/* Related services */
+.vx-service-detail__related {
+  margin-top: 95px;
+  padding-top: 72px;
+  border-top: 1px solid var(--sp-border);
+}
+
+.vx-service-detail__related .vx-section-eyebrow {
+  margin-bottom: 13px;
+}
+
+.vx-service-detail__related .vx-section-title {
+  margin: 0 0 30px;
+  color: #fff;
+  font: 600 clamp(28px, 4vw, 42px)/1.05 "Clash Display", sans-serif;
+  letter-spacing: -.035em;
+}
+
+.vx-service-detail__related .vx-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.vx-service-detail__related .vx-service-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  padding: 27px;
+  border: 1px solid var(--sp-border);
+  border-radius: 20px;
+  color: inherit;
+  background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+  text-decoration: none;
+  transition: transform .3s ease, border-color .3s ease, background .3s ease, box-shadow .3s ease;
+}
+
+.vx-service-detail__related .vx-service-card::after {
+  content: "↗";
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  color: rgba(240,169,58,.7);
+  font-size: 20px;
+  transition: transform .25s ease;
+}
+
+.vx-service-detail__related .vx-service-card:hover {
+  border-color: rgba(240,169,58,.28);
+  background: linear-gradient(145deg, rgba(240,169,58,.075), rgba(255,255,255,.02));
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
+  transform: translateY(-5px);
+}
+
+.vx-service-detail__related .vx-service-card:hover::after {
+  transform: translate(3px, -3px);
+}
+
+.vx-service-detail__related .vx-service-card__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 23px;
+  border: 1px solid rgba(240,169,58,.2);
+  border-radius: 14px;
+  color: var(--sp-gold-soft);
+  background: var(--sp-gold-dim);
+}
+
+.vx-service-detail__related .vx-service-card h3 {
+  margin: 0 0 9px;
+  color: #f5f7fa;
+  font: 600 20px/1.2 "Clash Display", sans-serif;
+}
+
+.vx-service-detail__related .vx-service-card p {
+  max-width: 290px;
+  margin: 0;
+  color: #929fab;
+  font: 400 13px/1.65 "Satoshi", sans-serif;
+}
+
+/* Reveal animation fallback */
+.vx-service-detail .vx-reveal {
+  animation: spReveal .65s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.vx-service-detail__cover.vx-reveal { animation-delay: .08s; }
+.vx-service-detail__prose.vx-reveal { animation-delay: .14s; }
+.vx-service-detail__block.vx-reveal { animation-delay: .20s; }
+.vx-service-detail__sidebar .vx-reveal { animation-delay: .12s; }
+
+@keyframes spReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 980px) {
+  .vx-service-detail {
+    padding-top: 32px;
+  }
+
+  .vx-service-detail__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vx-service-detail__sidebar {
+    position: static;
+  }
+
+  .vx-service-detail__cta {
+    max-width: 620px;
+  }
+
+  .vx-service-detail__related .vx-services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .vx-service-detail {
+    padding: 25px 0 75px;
+  }
+
+  .vx-service-detail__back {
+    margin-bottom: 28px;
+  }
+
+  .vx-service-detail__header {
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .vx-service-detail__icon {
+    flex-basis: 52px;
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+  }
+
+  .vx-service-detail__header h1 {
+    font-size: 39px;
+  }
+
+  .vx-service-detail__cover,
+  .vx-service-detail__cover img {
+    min-height: 270px;
+  }
+
+  .vx-service-detail__cover {
+    border-radius: 20px;
+  }
+
+  .vx-service-detail__prose {
+    padding-top: 28px;
+  }
+
+  .vx-service-detail__prose p,
+  .vx-service-detail__prose p:first-child {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .vx-service-detail__block {
+    padding: 23px 19px;
+    border-radius: 19px;
+  }
+
+  .vx-service-detail__block h2 {
+    font-size: 25px;
+  }
+
+  .vx-service-detail__step {
+    grid-template-columns: 43px 1fr;
+    gap: 13px;
+  }
+
+  .vx-service-detail__step > span {
+    width: 40px;
+    height: 40px;
+  }
+
+  .vx-service-detail__related {
+    margin-top: 65px;
+    padding-top: 48px;
+  }
+
+  .vx-service-detail__related .vx-services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vx-service-detail__related .vx-service-card {
+    min-height: 190px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vx-service-detail *,
+  .vx-service-detail *::before,
+  .vx-service-detail *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+
+/* =========================================================
+   PREMIUM LIGHT THEME
+   Existing layout/spacing/sizing preserved.
+   ========================================================= */
+
+.vx-service-detail {
+  --sp-bg: #ffffff;
+  --sp-surface: #ffffff;
+  --sp-surface-2: #f8fafc;
+  --sp-border: rgba(15, 23, 42, .09);
+  --sp-border-strong: rgba(15, 23, 42, .13);
+  --sp-text: #151922;
+  --sp-muted: #667085;
+  --sp-gold: #f0a93a;
+  --sp-gold-soft: #c98312;
+  --sp-gold-dim: rgba(240,169,58,.10);
+  --sp-shadow: 0 24px 70px rgba(15,23,42,.09);
+
+  background: #ffffff !important;
+  color: #151922;
+}
+
+.vx-service-detail::before {
+  opacity: 0;
+  background-image: none;
+}
+
+/* Back */
+.vx-service-detail__back {
+  color: #667085;
+}
+
+.vx-service-detail__back:hover {
+  color: #c98312;
+}
+
+/* Heading */
+.vx-service-detail .vx-section-eyebrow {
+  color: #b8750c;
+}
+
+.vx-service-detail__header h1 {
+  color: #151922 !important;
+}
+
+/* Icon */
+.vx-service-detail__icon {
+  border-color: rgba(240,169,58,.25);
+  color: #c98312;
+  background: linear-gradient(145deg, #fffaf0, #ffffff);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    0 14px 35px rgba(15,23,42,.07);
+}
+
+/* Image */
+.vx-service-detail__cover {
+  border-color: rgba(15,23,42,.10);
+  background: #f3f5f8;
+  box-shadow: 0 24px 60px rgba(15,23,42,.10);
+}
+
+.vx-service-detail__cover::after {
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(15,23,42,.12) 100%);
+}
+
+/* Text */
+.vx-service-detail__prose p {
+  color: #667085;
+}
+
+.vx-service-detail__prose p:first-child {
+  color: #3f4754;
+}
+
+/* Main cards */
+.vx-service-detail__block {
+  border-color: rgba(15,23,42,.09);
+  background: #ffffff;
+  box-shadow: 0 18px 50px rgba(15,23,42,.06);
+  backdrop-filter: none;
+}
+
+.vx-service-detail__block h2 {
+  color: #151922;
+}
+
+/* Checklist */
+.vx-service-detail__checklist li {
+  border-color: rgba(15,23,42,.075);
+  color: #667085;
+  background: #f8fafc;
+}
+
+.vx-service-detail__checklist li:hover {
+  border-color: rgba(240,169,58,.28);
+  background: #fffdf8;
+}
+
+.vx-service-detail__checklist strong {
+  color: #252b35;
+}
+
+.vx-service-detail__checklist li::before {
+  color: #ffffff;
+  background: #f0a93a;
+}
+
+/* Process */
+.vx-service-detail__step {
+  border-bottom-color: rgba(15,23,42,.09);
+}
+
+.vx-service-detail__step > span {
+  border-color: rgba(240,169,58,.28);
+  color: #b8750c;
+  background: rgba(240,169,58,.09);
+}
+
+.vx-service-detail__step h3 {
+  color: #252b35;
+}
+
+.vx-service-detail__step p {
+  color: #667085;
+}
+
+/* FAQ */
+.vx-faq__item {
+  border-color: rgba(15,23,42,.075);
+  background: #f8fafc;
+}
+
+.vx-faq__item summary {
+  color: #252b35;
+}
+
+.vx-faq__item[open] summary {
+  color: #b8750c;
+  background: rgba(240,169,58,.055);
+}
+
+.vx-faq__item p {
+  color: #667085;
+}
+
+/* Sidebar CTA */
+.vx-service-detail__cta {
+  border-color: rgba(240,169,58,.25);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(240,169,58,.12), transparent 13rem),
+    linear-gradient(145deg, #ffffff, #f8fafc);
+  box-shadow: 0 24px 60px rgba(15,23,42,.09);
+}
+
+.vx-service-detail__cta h3 {
+  color: #151922;
+}
+
+.vx-service-detail__cta p {
+  color: #667085;
+}
+
+.vx-service-detail__cta-link {
+  color: #667085;
+}
+
+.vx-service-detail__cta-link:hover {
+  color: #151922;
+}
+
+/* Related services */
+.vx-service-detail__related {
+  border-top-color: rgba(15,23,42,.09);
+}
+
+.vx-service-detail__related .vx-section-title {
+  color: #151922;
+}
+
+.vx-service-detail__related .vx-service-card {
+  border-color: rgba(15,23,42,.09);
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(15,23,42,.05);
+}
+
+.vx-service-detail__related .vx-service-card:hover {
+  border-color: rgba(240,169,58,.28);
+  background: #fffdf8;
+  box-shadow: 0 20px 50px rgba(15,23,42,.09);
+}
+
+.vx-service-detail__related .vx-service-card__icon {
+  color: #c98312;
+  background: rgba(240,169,58,.09);
+}
+
+.vx-service-detail__related .vx-service-card h3 {
+  color: #252b35;
+}
+
+.vx-service-detail__related .vx-service-card p {
+  color: #667085;
+}
+
+/* Make the page itself white even if a parent stylesheet uses a dark body */
+body,
+html {
+  background: #ffffff;
+}
+
+@media (max-width: 980px) {
+  .vx-service-detail {
+    background: #ffffff !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .vx-service-detail {
+    background: #ffffff !important;
+  }
+}

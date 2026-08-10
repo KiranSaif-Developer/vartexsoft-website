@@ -422,7 +422,7 @@
 .vx-services-hero {
   position: relative;
   padding: 160px 0 70px;
-  background: var(--color-bg-dark);
+  background: white;
   overflow: hidden;
   isolation: isolate;
 }
@@ -877,3 +877,9 @@
     grid-template-columns: 1fr;
   }
 }
+  .vx-about-values .vx-section-header,
+  .vx-about-team .vx-section-header {
+    margin-bottom: 50px;
+  }
+  body[data-page="Courses"] section.vx-services-hero{
+  background: #ffffff !important;}

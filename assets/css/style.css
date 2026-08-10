@@ -45,15 +45,15 @@
 html {
   scroll-behavior: smooth;
 }
-
+/* 
 body {
-  background: var(--color-bg-dark);   /* pehle jaisa wapis karo */
+  background: var(--color-bg-dark);   
   color: var(--color-white);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-}
+} */
 
 img {
   max-width: 100%;

@@ -16,9 +16,11 @@
     { label: "Home", href: `${ROOT}/index.html` },
     { label: "Services", href: `${ROOT}/pages/services.html` },
     { label: "Courses", href: `${ROOT}/pages/courses.html` },
-    { label: "Blogs", href: `${ROOT}/pages/blog.html` },
     { label: "About Us", href: `${ROOT}/pages/about.html` },
+    { label: "Blogs", href: `${ROOT}/pages/blog.html` },
+    { label: "Team", href: `${ROOT}/pages/team.html` },
     { label: "Contact Us", href: `${ROOT}/pages/contact.html` },
+    
   ];
 
   function navbarHTML() {

@@ -148,3 +148,79 @@
     init();
   }
 })();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const faqCards = document.querySelectorAll(".vx-faq-card");
+  const tabBtns = document.querySelectorAll(".vx-tab-btn");
+  const searchInput = document.getElementById("vxFaqSearch");
+
+  // 1. Category Filter Functionality
+  function filterFAQs(category) {
+    faqCards.forEach((card) => {
+      const cardCategory = card.getAttribute("data-category");
+
+      // Agar 'all' selected ho ya category match kare to show karo, warna hide karo
+      if (category === "all" || cardCategory === category) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+        card.classList.remove("active"); // Hidden cards ko close kar do
+      }
+    });
+  }
+
+  // 2. Tab Buttons Event Listeners
+  tabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Active class swap
+      tabBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // Search bar clear karo jab tab change ho
+      if (searchInput) searchInput.value = "";
+
+      const category = btn.getAttribute("data-category");
+      filterFAQs(category);
+    });
+  });
+
+  // 3. Accordion Expand/Collapse Toggle
+  faqCards.forEach((card) => {
+    const questionBtn = card.querySelector(".vx-faq-question");
+    if (questionBtn) {
+      questionBtn.addEventListener("click", () => {
+        const isActive = card.classList.contains("active");
+
+        // Baaki sab active cards ko close karo
+        faqCards.forEach((c) => c.classList.remove("active"));
+
+        // Agar pehle se open nahi tha to open kar do
+        if (!isActive) {
+          card.classList.add("active");
+        }
+      });
+    }
+  });
+
+  // 4. Live Search Filtering
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      const query = e.target.value.toLowerCase().trim();
+
+      // Reset tab button highlight to 'All Questions' when searching
+      tabBtns.forEach((b) => b.classList.remove("active"));
+      const allTab = document.querySelector('.vx-tab-btn[data-category="all"]');
+      if (allTab) allTab.classList.add("active");
+
+      faqCards.forEach((card) => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+          card.classList.remove("active");
+        }
+      });
+    });
+  }
+});
