@@ -756,130 +756,454 @@
 }
 
 /* Why choose us in (services) */
-/* ---------- WHY OUR SERVICES ---------- */
-.vx-why-better {
-  padding: 100px 0;
-  background: var(--color-surface-light);
+/* =========================================================
+   WHY VARTEXSOFT
+   PREMIUM SPLIT SECTION
+   ========================================================= */
+
+.vx-different-section {
+  position: relative;
+  padding: 100px 6%;
+  background: #ffffff;
+  overflow: hidden;
 }
 
-.vx-why-better__grid {
+
+/* subtle background circle */
+
+.vx-different-section::before {
+  content: "";
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -260px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: 1px solid rgba(217, 154, 37, 0.10);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* MAIN WRAPPER */
+
+.vx-different-wrap {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1180px;
+  margin: 0 auto;
+
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 56px;
+  grid-template-columns: 0.95fr 1.05fr;
+
+  gap: 70px;
+
   align-items: center;
 }
 
-.vx-why-better__media {
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.vx-different-image {
   position: relative;
-  height: 420px;
-  border-radius: var(--radius-lg);
+
+  height: 540px;
+
+  border-radius: 28px;
+
   overflow: hidden;
-  border: 1px solid var(--color-border-light);
-  box-shadow: 0 30px 60px -12px rgba(18, 20, 28, 0.15);
+
+  background: #101522;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.14);
 }
 
-.vx-why-better__media img {
+
+/* image */
+
+.vx-different-image img {
   width: 100%;
   height: 100%;
+
+  display: block;
+
   object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(.2,.8,.2,1),
+    filter 0.5s ease;
 }
 
-.vx-why-better__media--fallback img {
-  display: none;
+
+/* image hover */
+
+.vx-different-image:hover img {
+  transform: scale(1.045);
 }
 
-.vx-why-better__media--fallback::after {
-  content: "Add a team or workspace photo here";
+
+/* dark image overlay */
+
+.vx-different-image::after {
+  content: "";
+
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 30px;
-  color: var(--color-ink-muted);
-  font-size: 14px;
-  font-weight: 700;
-  background: linear-gradient(160deg, #ffffff, var(--color-surface-light-2));
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 45%,
+      rgba(5, 8, 18, 0.65) 100%
+    );
+
+  pointer-events: none;
 }
 
-.vx-why-better__tag {
+
+/* IMAGE BADGE */
+
+.vx-image-badge {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 24px;
+  bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 11px 16px;
+
+  background: rgba(10, 14, 27, 0.86);
+
+  border: 1px solid rgba(255,255,255,0.14);
+
+  border-radius: 999px;
+
+  backdrop-filter: blur(12px);
+
+  color: #ffffff;
+}
+
+
+.vx-image-badge span {
+  color: #e0a12c;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: .18em;
+}
+
+
+.vx-image-badge strong {
+  font-size: 11px;
+
+  letter-spacing: .08em;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.vx-different-content {
+  position: relative;
+}
+
+
+/* EYEBROW */
+
+.vx-different-eyebrow {
   display: inline-flex;
+
   align-items: center;
-  gap: 8px;
-  color: var(--color-gold);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+
+  gap: 11px;
+
+  margin-bottom: 18px;
+
+  color: #c88b22;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: .2em;
+
   text-transform: uppercase;
-  margin-bottom: 14px;
 }
 
-.vx-why-better__content h2 {
-  font-family: var(--font-display);
-  font-size: clamp(26px, 3.2vw, 38px);
+
+.vx-different-eyebrow i {
+  display: block;
+
+  width: 32px;
+  height: 1.5px;
+
+  background: #d99a25;
+}
+
+
+/* HEADING */
+
+.vx-different-content h2 {
+  margin: 0;
+
+  max-width: 600px;
+
+  color: #10182b;
+
+  font-family: var(--display, sans-serif);
+
+  font-size: clamp(42px, 4.5vw, 64px);
+
+  line-height: .98;
+
+  letter-spacing: -.055em;
+
   font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-ink);
-  margin-bottom: 34px;
-  max-width: 460px;
 }
 
-.vx-why-better__list {
+
+.vx-different-content h2 span {
+  display: block;
+
+  color: #d99524;
+}
+
+
+/* INTRO */
+
+.vx-different-intro {
+  max-width: 570px;
+
+  margin: 22px 0 32px;
+
+  color: #6d7587;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.vx-different-features {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+
+  max-width: 650px;
 }
 
-.vx-why-better__item {
+
+.vx-different-feature {
   display: flex;
-  align-items: center;
+
   gap: 14px;
+
+  padding: 17px;
+
+  background: #f8f8f6;
+
+  border: 1px solid #e9e9e6;
+
+  border-radius: 14px;
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.vx-different-feature:hover {
+  transform: translateY(-4px);
+
   background: #ffffff;
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-sm);
-  padding: 16px 18px;
-  font-size: 14px;
+
+  border-color: rgba(217, 154, 37, .35);
+
+  box-shadow:
+    0 14px 30px rgba(15, 23, 42, .07);
+}
+
+
+/* ICON */
+
+.vx-feature-icon {
+  flex: 0 0 30px;
+
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #111827;
+
+  color: #e2a02c;
+
+  font-size: 13px;
+
   font-weight: 700;
-  color: var(--color-ink);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.vx-why-better__item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(18, 20, 28, 0.08);
-  border-color: rgba(240, 169, 58, 0.35);
+
+/* FEATURE TITLE */
+
+.vx-different-feature h3 {
+  margin: 0 0 5px;
+
+  color: #151b2c;
+
+  font-size: 13px;
+
+  font-weight: 750;
+
+  line-height: 1.3;
 }
 
-.vx-why-better__icon {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  background: var(--color-gold-dim);
-  color: var(--color-gold);
-  display: flex;
+
+/* FEATURE TEXT */
+
+.vx-different-feature p {
+  margin: 0;
+
+  color: #777e8e;
+
+  font-size: 11px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.vx-different-btn {
+  display: inline-flex;
+
   align-items: center;
-  justify-content: center;
+
+  gap: 18px;
+
+  margin-top: 28px;
+
+  padding: 13px 20px;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
 }
 
-@media (max-width: 992px) {
-  .vx-why-better__grid {
-    grid-template-columns: 1fr;
-  }
-  .vx-why-better__media {
-    height: 320px;
-  }
+
+.vx-different-btn span {
+  color: #e2a02c;
+
+  font-size: 17px;
+
+  transition: transform .3s ease;
 }
 
-@media (max-width: 560px) {
-  .vx-why-better__list {
+
+.vx-different-btn:hover {
+  transform: translateY(-3px);
+
+  background: #d99524;
+
+  box-shadow:
+    0 12px 28px rgba(217, 149, 36, .25);
+}
+
+
+.vx-different-btn:hover span {
+  color: #ffffff;
+
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .vx-different-section {
+    padding: 75px 24px;
+  }
+
+  .vx-different-wrap {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .vx-different-image {
+    height: 430px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .vx-different-section {
+    padding: 60px 18px;
+  }
+
+  .vx-different-image {
+    height: 330px;
+
+    border-radius: 20px;
+  }
+
+  .vx-different-content h2 {
+    font-size: 42px;
+  }
+
+  .vx-different-features {
     grid-template-columns: 1fr;
   }
-}
-  .vx-about-values .vx-section-header,
-  .vx-about-team .vx-section-header {
-    margin-bottom: 50px;
+
+  .vx-different-feature {
+    padding: 15px;
   }
-  body[data-page="Courses"] section.vx-services-hero{
-  background: #ffffff !important;}
+
+}
